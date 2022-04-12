@@ -108,7 +108,6 @@ public class TestCases extends BaseClass{
 		Assert.assertTrue((itemPrice.contains(ItemPricCP)));
 		
 		cart.ItemMinusBtn.click();
-	//	driver.switchTo().frame(cart.RemoveGoodsFrame);
 		cart.RemoveGoodsBtn.click();
 		
 	}
@@ -246,12 +245,8 @@ public class TestCases extends BaseClass{
 		    String lastPrice = cart.ItemLastPriceCP.getText();
 		    
 		    Assert.assertEquals(discountedPrice, lastPrice);
-		    
-		    cart.ItemMinusBtn.click();
-		//	driver.switchTo().frame(cart.RemoveGoodsFrame);
-		    
+		    cart.ItemMinusBtn.click();		    
 		    wait.until(ExpectedConditions.visibilityOf(cart.RemoveGoodsBtn));
-		    
 			cart.RemoveGoodsBtn.click();
 		    
 		    
