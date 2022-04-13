@@ -33,7 +33,7 @@ WebDriver driver ;
 	@FindBy(xpath= "//iframe[@id='_hjRemoteVarsFrame']")
 	 public WebElement RemoveGoodsFrame;
 	
-	@FindBy(xpath= "//div[@id='alzaDialog']//span[contains(text(),'Remove goods')]")
+	@FindBy(xpath= "//div[@id='alzaDialog']//div[@class='buttons']//span[contains(text(),'Remove goods')]")
 	 public WebElement RemoveGoodsBtn;
 	
 	@FindBy(xpath= "//div[@class='del']")
@@ -55,6 +55,6 @@ WebDriver driver ;
 	public List<WebElement>GiftVoucherMsg;
 	
 	@FindBy(xpath= "//div[@id='infodialog']//a")
-	 public WebElement NoVoucherdialogClose;
+	 public List<WebElement> NoVoucherdialogClose;
 	
 }

@@ -221,9 +221,12 @@ public class TestCases extends BaseClass{
 		    if(!status) {
 		    	
 		    	cart.CloseDiscountSugg.click();
-		    	cart.NoVoucherdialogClose.click();
+		    	if(!cart.NoVoucherdialogClose.isEmpty()) {
+		    		cart.NoVoucherdialogClose.get(0).click();
+		    	}
+		    	else {
 		    	cart.PromocodeOrDiscountlink.click();
-		    	
+		    	}
 		    }
 		    else {
 		    	
@@ -246,10 +249,11 @@ public class TestCases extends BaseClass{
 		    
 		    Assert.assertEquals(discountedPrice, lastPrice);
 		    cart.ItemMinusBtn.click();		    
-		    wait.until(ExpectedConditions.visibilityOf(cart.RemoveGoodsBtn));
+		    wait.until(ExpectedConditions.elementToBeClickable(cart.RemoveGoodsBtn));
 			cart.RemoveGoodsBtn.click();
-		    
-		    
+			
+			wait.until(ExpectedConditions.elementToBeClickable(cart.RemoveGoodsBtn));
+			cart.RemoveGoodsBtn.click();
 
 	}
 	
